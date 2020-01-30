@@ -6,7 +6,6 @@
 //
 
 
-#if !os(Linux)
 #if canImport(SwiftUI)
 
 import SwiftUI
@@ -16,6 +15,10 @@ import Foundation
 /// Output format to use to generate an NSAttributedString from the
 /// highlighted code. A `Theme` is used to determine what fonts and
 /// colors to use for the various tokens.
+@available(iOS 13, *)
+@available(macOS 10.15, *)
+@available(watchOS 6, *)
+@available(tvOS 13, *)
 public struct SwiftUITextOutputFormat: OutputFormat {
     public var theme: Theme
     
@@ -28,6 +31,10 @@ public struct SwiftUITextOutputFormat: OutputFormat {
     }
 }
 
+@available(iOS 13, *)
+@available(macOS 10.15, *)
+@available(watchOS 6, *)
+@available(tvOS 13, *)
 public extension SwiftUITextOutputFormat {
     struct Builder: OutputBuilder {
         private let theme: Theme
@@ -77,5 +84,4 @@ public extension SwiftUITextOutputFormat {
     }
 }
 
-#endif
 #endif
